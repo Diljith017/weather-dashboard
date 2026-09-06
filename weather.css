@@ -1,0 +1,331 @@
+/* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 0;
+        }
+
+
+            /* =========================
+           THEME BUTTON
+        ========================= */
+
+        #themeBtn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #222;
+            color: rgb(235, 229, 229);
+        }
+
+        /* =========================
+           date and time
+        ========================= */
+
+        .date-time {
+    margin-top: 8px;
+    color: #666;
+}
+
+#currentDate {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#currentTime {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+body.dark .date-time {
+    color: #ccc;
+}
+
+
+
+        /* =========================
+           SEARCH SECTION
+        ========================= */
+
+        .search-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        #cityInput {
+            flex: 1;
+            padding: 14px;
+            border: 1px solid #f1e4e4;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        #searchBtn {
+            padding: 14px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #searchBtn:hover {
+            opacity: 0.85;
+        }
+
+
+        /* =========================
+           WEATHER CARD
+        ========================= */
+
+        .weather-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .weather-card h2 {
+            margin-bottom: 15px;
+        }
+
+        .temperature {
+            font-size: 50px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .weather-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .info-box {
+            background-color: #f2f5f9;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+
+        /* =========================
+           FORECAST
+        ========================= */
+
+        .forecast-section {
+            margin-bottom: 30px;
+        }
+
+        .forecast-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .forecast-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .forecast-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .forecast-card .forecast-temp {
+            font-size: 25px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+
+        /* =========================
+           FAVORITES
+        ========================= */
+
+        .favorites-section {
+            margin-top: 30px;
+        }
+
+        .favorites-section h2 {
+            margin-bottom: 15px;
+        }
+
+        #favoritesList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .favorite-item {
+            background-color: white;
+            padding: 12px 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .favorite-item button {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           ADD FAVORITE BUTTON
+        ========================= */
+
+        #favoriteBtn {
+            margin-top: 20px;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ffb300;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+
+          /* =========================
+           LOADING SPINNER
+        ========================= */
+
+        .loading {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 5px solid #ddd;
+            border-top: 5px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: auto;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* =========================
+           ERROR MESSAGE
+        ========================= */
+
+        .error {
+            background-color: #ffe0e0;
+            color: #d00000;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+
+        
+        /* =========================
+           DARK MODE
+        ========================= */
+
+        body.dark {
+            background-color: #121212;
+            color: white;
+        }
+
+        body.dark .weather-card,
+        body.dark .forecast-card,
+        body.dark .favorite-item {
+            background-color: #1f1f1f;
+            color: white;
+        }
+
+        body.dark .info-box {
+            background-color: #2b2b2b;
+        }
+
+        body.dark #cityInput {
+            background-color: #222;
+            color: white;
+            border-color: #555;
+        }
+
+        body.dark #themeBtn {
+            background-color: white;
+            color: #222;
+        }
+
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+
+            .search-section {
+                flex-direction: column;
+            }
+
+            #searchBtn {
+                width: 100%;
+            }
+
+            .forecast-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .weather-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+
+            .container {
+                width: 94%;
+            }
+
+            .forecast-container {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .temperature {
+                font-size: 40px;
+            }
+        }
+
+

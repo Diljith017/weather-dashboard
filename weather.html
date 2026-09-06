@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather Dashboard</title>
+    
+     <link rel="stylesheet" href="weather.css">
+
+    <style>
+        /* =========================
+           BASIC RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f5f9;
+            color: #222;
+            transition: 0.3s;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <header>
+
+            <h1>🌤️ Weather Dashboard</h1>
+        <div class="date-time">
+         <div id="currentDate"></div>
+         <div id="currentTime"></div>
+       </div>
+            <button id="themeBtn">🌙 Dark</button>
+
+        </header>
+
+
+        <!-- =========================
+             SEARCH SECTION
+        ========================== -->
+
+        <div class="search-section">
+
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Enter city name..."
+            >
+
+            <button id="searchBtn">
+                Search Weather
+            </button>
+
+              <button id="locationBtn">
+        📍 My Location
+    </button>
+
+        </div>
+        
+
+
+        <!-- =========================
+             LOADING
+        ========================== -->
+
+        <div
+            id="loading"
+            class="loading"
+            style="display: none;"
+        >
+
+            <div class="spinner"></div>
+
+            <p>Loading weather...</p>
+
+        </div>
+
+
+        <!-- =========================
+             ERROR
+        ========================== -->
+
+        <div
+            id="errorMsg"
+            class="error"
+            style="display: none;"
+        ></div>
+
+
+        <!-- =========================
+             CURRENT WEATHER
+        ========================== -->
+
+        <div
+            id="weatherCard"
+            class="weather-card"
+            style="display: none;"
+        >
+
+            <h2 id="cityName">
+                Kochi
+            </h2>
+
+            <p class="temperature">
+                <span id="temperature">45</span>°C
+            </p>
+
+            <p id="description">
+                Light Rain
+            </p>
+
+
+            <!-- Weather Information -->
+
+            <div class="weather-info">
+
+                <div class="info-box">
+                    <p>🌡️ Feels Like</p>
+                    <strong>
+                        <span id="feelsLike">30</span>°C
+                    </strong>
+                </div>
+
+
+                <div class="info-box">
+                    <p>💧 Humidity</p>
+                    <strong>
+                        <span id="humidity">80</span>%
+                    </strong>
+                </div>
+
+
+                <div class="info-box">
+                    <p>💨 Wind</p>
+                    <strong>
+                        <span id="windSpeed">4</span> m/s
+                    </strong>
+                </div>
+
+                <div class="info-box">
+                    <p>🌅 Sunrise</p>
+                    <strong id="sunrise">--</strong>
+                </div>
+
+                <div class="info-box">
+                    <p>🌇 Sunset</p>
+                    <strong id="sunset">--</strong>
+                </div>
+
+            </div>
+
+
+            <!-- Favorite Button -->
+
+            <button id="favoriteBtn">
+                ⭐ Add to Favorites
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+              5 DAY FORECAST
+        ========================== -->
+
+      
+          
+        
+
+        <section
+            id="forecastSection"
+            class="forecast-section"
+            style="display: none;"
+        >
+
+            <h2>📅 5-Day Forecast</h2>
+
+
+            <div
+                id="forecastContainer"
+                class="forecast-container"
+            >
+
+            <!-- JavaScript will create forecast cards here -->
+
+            </div>
+
+        </section>
+
+
+ <!-- =========================
+              //  FAVORITES
+        ========================== -->
+
+           
+       
+
+        <section class="favorites-section">
+
+            <h2>⭐ Favorites</h2>
+
+
+            <div id="favoritesList">
+
+       <!-- JavaScript will add favorite cities here -->
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+   
+  
+    <script src="weather.js"></script>
+
+</body>
+
+</html>
